@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Jyllands Park Zoo",
+  "name": "Jyllands Park Zoo - Frihed lige ved hånden. Oplev dyrene helt tæt på og tilgå nemt parkens aktiviteter!",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,5 +21,5 @@
   "start_url": "/zoo-app/index.html",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "red"
 }
