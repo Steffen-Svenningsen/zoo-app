@@ -18,9 +18,21 @@ import "../App.sass";
 import { Pagination } from "swiper";
 
 export default function IntroGuide() {
+  const [isActive, setIsActive] = useState(false);
+  const handleClick = event => {
+    setIsActive(current => !current);
+  }
+  const [visible, setVisible] = useState(true);
+
+  const removeElement = () => {
+    setVisible((prev) => !prev);
+  };
   return (
     <>
-      <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
+    {visible && (
+
+      <Swiper pagination={true} modules={[Pagination]} className={ isActive ? "mySwiper hidden" : "mySwiper"}>
+        <button onClick={removeElement && handleClick} className="close-guide">X</button>
         <SwiperSlide>
           <div className="img-container">
             <img src={AppImage} alt="App" />
@@ -38,9 +50,10 @@ export default function IntroGuide() {
             <img src={ZooImage} alt="Zoo park" />
           </div>
           <p>Sæt armbåndet tæt på standeren ved den enkelte aktivitet og få adgang!</p>
-          <NavLink className="cta-btn" to="/indbetal">Kom igang</NavLink>
+          <button onClick={removeElement && handleClick} className="cta-btn">Kom igang</button>
         </SwiperSlide>
       </Swiper>
+    )}
     </>
   );
 }

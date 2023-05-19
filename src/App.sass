@@ -36,7 +36,9 @@
     left: 0
     bottom: 0
     width: 100%
+    height: fit-content
     box-sizing: border-box
+    margin-top: 65px
 
     .nav-bar-links
       display: flex
@@ -76,6 +78,9 @@
   .header-logo
     margin-bottom: 2rem
 
+  .hidden
+    display: none
+
   .mySwiper
     width: 100%
     height: 100vh
@@ -84,6 +89,14 @@
     left: 0
     background: var(--white)
     z-index: 100
+
+    .close-guide
+      position: absolute
+      top: 1rem
+      right: 1rem
+      z-index: 200
+      cursor: pointer
+      padding: 0.5rem 1rem
 
     .swiper-slide
       display: flex
@@ -96,7 +109,7 @@
       p
         text-align: center
         max-width: 260px
-        margin: 4rem 1.5rem 6rem 1.5rem
+        margin: 2rem 1.5rem 3rem 1.5rem
         font-size: 1.5rem
 
     .swiper-pagination
