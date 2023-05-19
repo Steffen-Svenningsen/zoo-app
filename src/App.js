@@ -20,10 +20,10 @@ function App() {
     <div className="App">
       <BrowserRouter basename={'/zoo-app'}>
         <Routes>
-          <Route path='/' element={ introScreen ? <IntroGuide /> : <HomePage />}></Route>
+          <Route path='/' element={ introScreen ? <HomePage /> : <IntroGuide />}></Route>
           <Route path='/indbetal' element={ <DepositPage /> }></Route>
           <Route path='/booking' element={ <BookingPage /> }></Route>
-          <Route path='/profile' element={ <ProfilePage /> }></Route>
+          <Route path='/profil' element={ <ProfilePage /> }></Route>
         </Routes>
       </BrowserRouter>
     </div>
