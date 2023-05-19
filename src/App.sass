@@ -4,6 +4,7 @@
   --white: #fff
   --grey: #d9d9d9
   --black: #252525
+  --sand: #E0CE98
   
 .App
   padding: 1rem
@@ -42,6 +43,35 @@
       justify-content: space-between
       gap: 1rem
       margin: 0 1rem
+
+      .active
+        filter: brightness(1000%) contrast(1000%)
+
+  .my-wristbands
+    background: var(--blue)
+    color: var(--white)
+    padding: 1rem
+    border-radius: 8px
+
+    h4
+      margin-top: 0
+
+  .news
+    background: var(--sand)
+    color: var(--black)
+    padding: 1rem
+    border-radius: 8px
+    margin: 2rem 0
+
+    h4
+      margin-top: 0
+
+  .quick-links
+    display: flex
+    flex-wrap: wrap
+    gap: 1rem
+
+    div
 
   .header-logo
     margin-bottom: 2rem

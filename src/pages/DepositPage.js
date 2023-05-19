@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function DepositPage() {
   return (
-    <div>DepositPage</div>
+    <div>
+      <h2>Indbetal til armbånd</h2>
+    </div>
   )
 }

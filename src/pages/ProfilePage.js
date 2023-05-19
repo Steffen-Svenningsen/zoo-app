@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function ProfilePage() {
   return (
-    <div>ProfilePage</div>
+    <div>
+      <h2>Min profil</h2>
+    </div>
   )
 }
