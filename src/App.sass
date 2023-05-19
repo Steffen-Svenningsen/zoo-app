@@ -6,11 +6,12 @@
   --black: #252525
   
 .App
-  padding: 0
+  padding: 1rem
   margin: 0
   width: 100%
   height: 100%
   box-sizing: border-box
+  position: relative
 
   div
     img
@@ -27,9 +28,26 @@
     border-radius: 8px
     font-weight: 700
 
+  .nav-bar
+    background: var(--cta)
+    padding: 1rem
+    position: fixed
+    left: 0
+    bottom: 0
+    width: 100%
+    box-sizing: border-box
+
+  .header-logo
+    margin-bottom: 2rem
+
   .mySwiper
     width: 100%
     height: 100vh
+    position: absolute
+    top: 0
+    left: 0
+    background: var(--white)
+    z-index: 100
 
     .swiper-slide
       display: flex
