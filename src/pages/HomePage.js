@@ -4,7 +4,7 @@ import QuickLinkBox from '../components/QuickLinkBox';
 import ZooMap from "../assets/images/zoo-map.webp";
 import OpeningHours from "../assets/images/opening-hours.webp";
 import Food from "../assets/images/food.webp";
-import Zebra from "../assets/images/zebra.webp";
+import Armadillo from "../assets/images/armadillo.webp";
 
 export default function HomePage() {
   const [introScreen, setIntroScreen] = useState(true)
@@ -37,9 +37,9 @@ export default function HomePage() {
       </div>
       <div className="quick-links">
         <QuickLinkBox imgSrc={ZooMap} imgDesc="Kort over Jyllands Park Zoo" linkPath="/kort-oversigt" title="Kort over parken" />
-        <QuickLinkBox imgSrc={Zebra} imgDesc="Zebra" linkPath="/dyrene" title="Dyrene" />
-        <QuickLinkBox imgSrc={Food} imgDesc="Mad og drikke" linkPath="/mad-og-drikke" title="Mad og drikke" />
-        <QuickLinkBox imgSrc={OpeningHours} imgDesc="Åbningstider" linkPath="/aabningstider" title="Åbningstider" />
+        <QuickLinkBox imgSrc={Armadillo} imgDesc="Zebra" linkPath="/dyrene" title="Se alle parkens dyr" />
+        <QuickLinkBox imgSrc={Food} imgDesc="Mad og drikke" linkPath="/mad-og-drikke" title="Mad og drikke info" />
+        <QuickLinkBox imgSrc={OpeningHours} imgDesc="Åbningstider" linkPath="/aabningstider" title="Åbningstider & priser" />
       </div>
     </div>
   )
