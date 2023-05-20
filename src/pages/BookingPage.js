@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function BookingPage() {
   return (
-    <div>
+    <div className='page'>
       <h2>Book aktiviteter</h2>
     </div>
   )

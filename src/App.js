@@ -7,6 +7,10 @@ import BookingPage from './pages/BookingPage';
 import ProfilePage from './pages/ProfilePage';
 import Logo from "./assets/images/logo.png";
 import NavBar from './components/NavBar';
+import MapOverview from './pages/MapOverview';
+import FoodPage from './pages/FoodPage';
+import OpeningHours from './pages/OpeningHours';
+import AnimalList from './pages/AnimalList';
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
           <Route path='/indbetal' element={ <DepositPage /> }></Route>
           <Route path='/booking' element={ <BookingPage /> }></Route>
           <Route path='/profil' element={ <ProfilePage /> }></Route>
+          <Route path='/kort-oversigt' element={ <MapOverview /> }></Route>
+          <Route path='/mad-og-drikke' element={ <FoodPage /> }></Route>
+          <Route path='/aabningstider' element={ <OpeningHours /> }></Route>
+          <Route path='/dyrene' element={ <AnimalList /> }></Route>
         </Routes>
         <NavBar />
       </BrowserRouter>

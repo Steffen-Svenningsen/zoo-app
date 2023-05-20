@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import IntroGuide from '../components/IntroGuide';
+import QuickLinkBox from '../components/QuickLinkBox';
+import ZooMap from "../assets/images/zoo-map.webp";
+import OpeningHours from "../assets/images/opening-hours.webp";
+import Food from "../assets/images/food.webp";
+import Zebra from "../assets/images/zebra.webp";
 
 export default function HomePage() {
   const [introScreen, setIntroScreen] = useState(true)
@@ -11,7 +16,7 @@ export default function HomePage() {
     }
   }, [])
   return (
-    <div>
+    <div className='page'>
       {
         introScreen ?
 
@@ -31,18 +36,10 @@ export default function HomePage() {
         Her skal der være "artikler" med nyheder fra parken
       </div>
       <div className="quick-links">
-        <div>
-          <h3>Kort over parken</h3>
-        </div>
-        <div>
-          <h3>Mad & drikke</h3>
-        </div>
-        <div>
-          <h3>Åbningstider</h3>
-        </div>
-        <div>
-          <h3>Dyrene</h3>
-        </div>
+        <QuickLinkBox imgSrc={ZooMap} imgDesc="Kort over Jyllands Park Zoo" linkPath="/kort-oversigt" title="Kort over parken" />
+        <QuickLinkBox imgSrc={Zebra} imgDesc="Zebra" linkPath="/dyrene" title="Dyrene" />
+        <QuickLinkBox imgSrc={Food} imgDesc="Mad og drikke" linkPath="/mad-og-drikke" title="Mad og drikke" />
+        <QuickLinkBox imgSrc={OpeningHours} imgDesc="Åbningstider" linkPath="/aabningstider" title="Åbningstider" />
       </div>
     </div>
   )
