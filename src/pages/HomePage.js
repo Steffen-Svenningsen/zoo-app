@@ -9,6 +9,7 @@ import Armadillo from "../assets/images/armadillo.webp";
 import WristbandItem from "../components/WristbandItem";
 import AddWristbandForm from "../components/AddWristbandForm";
 import EditWristbandForm from "../components/EditWristbandForm";
+import Giraf from "../assets/images/giraf.webp";
 
 export default function HomePage() {
   const [introScreen, setIntroScreen] = useState(true)
@@ -148,7 +149,15 @@ export default function HomePage() {
       </div>
       <div className='news'>
         <h2>Nyheder fra parken</h2>
-        <NavLink to="/ny-girafstald">Ny girafstald</NavLink>
+        <NavLink className="news-article-link" to="/ny-girafstald">
+          <div>
+            <img src={Giraf} width={120} height={120} alt="Giraf" />
+          </div>
+          <div>
+            <h3>Ny girafstald</h3>
+            <p>Vi er så glade og stolte over vores nye girafstald...</p>
+          </div>
+        </NavLink>
       </div>
       <div className="quick-links">
         <QuickLinkBox imgSrc={ZooMap} imgDesc="Kort over Jyllands Park Zoo" linkPath="/kort-oversigt" title="Kort over parken" />
