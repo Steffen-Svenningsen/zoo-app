@@ -90,13 +90,6 @@ export default function HomePage() {
     handleUpdateWristband(currentWristband.id, currentWristband);
   }
 
-  function handleDeleteClick(id) {
-    const removeItem = wristbands.filter((wristband) => {
-      return wristband.id !== id;
-    });
-    setWristbands(removeItem);
-  }
-
   // function to edit a wristband item
   function handleUpdateWristband(id, updatedWristband) {
     const updatedItem = wristbands.map((wristband) => {
