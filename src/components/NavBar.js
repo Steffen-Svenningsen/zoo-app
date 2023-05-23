@@ -12,7 +12,7 @@ export default function NavBar() {
             <NavLink to="/">
                 <HomeIcon />
             </NavLink>
-            <NavLink to="/indbetal">
+            <NavLink to="/billetter">
                 <MoneyIcon />
             </NavLink>
             <NavLink to="/booking">

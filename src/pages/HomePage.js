@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
 import IntroGuide from '../components/IntroGuide';
 import QuickLinkBox from '../components/QuickLinkBox';
 import ZooMap from "../assets/images/zoo-map.webp";
@@ -74,7 +75,7 @@ export default function HomePage() {
     setWristbands(removeItem);
   }
 
-  // create a boolean to indicate whether we're in editing mode or adding mode. We render this as HomePage.js via conditional rendering
+  // create a boolean to indicate whether we're in editing mode or adding mode. We render this at HomePage.js via conditional rendering
   const [isEditing, setIsEditing] = useState(false);
   const [currentWristband, setCurrentWristband] = useState({});
 
@@ -146,8 +147,8 @@ export default function HomePage() {
       </ul>
       </div>
       <div className='news'>
-        <h4>Nyheder fra parken</h4>
-        Her skal der være "artikler" med nyheder fra parken
+        <h2>Nyheder fra parken</h2>
+        <NavLink to="/ny-girafstald">Ny girafstald</NavLink>
       </div>
       <div className="quick-links">
         <QuickLinkBox imgSrc={ZooMap} imgDesc="Kort over Jyllands Park Zoo" linkPath="/kort-oversigt" title="Kort over parken" />
