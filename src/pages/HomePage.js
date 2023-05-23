@@ -5,6 +5,9 @@ import ZooMap from "../assets/images/zoo-map.webp";
 import OpeningHours from "../assets/images/opening-hours.webp";
 import Food from "../assets/images/food.webp";
 import Armadillo from "../assets/images/armadillo.webp";
+import WristbandItem from "../components/WristbandItem";
+import AddWristbandForm from "../components/AddWristbandForm";
+import EditWristbandForm from "../components/EditWristbandForm";
 
 export default function HomePage() {
   const [introScreen, setIntroScreen] = useState(true)
@@ -15,10 +18,104 @@ export default function HomePage() {
       localStorage.setItem("hasVisited", "true")
     }
   }, [])
+
+  const [wristbands, setWristbands] = useState(() => {
+    // we use getItem to get the wristbands thats saved in localStorage. but maybe there's none there?
+    const savedWristbands = localStorage.getItem("wristbands");
+    // if there are wristbands stored in localStorage
+    if (savedWristbands) {
+      // we return the parsed JSON object back to a javascript object
+      return JSON.parse(savedWristbands);
+      // otherwise
+    } else {
+      // we will return an empty array
+      return [];
+    }
+  });
+  const [wristband, setWristband] = useState("");
+
+  function handleInputChange(e) {
+    // set the new state value to the current value of the input field
+    setWristband(e.target.value);
+  }
+
+  // we need a way to submit the form via a function here
+  function handleFormSubmit(e) {
+    // we will prevent the browsers default behavior or refreshing page when submitting
+    e.preventDefault();
+
+    // if the input field is empty, don't submit
+    if (wristband !== "") {
+      setWristbands([
+        ...wristbands,
+        {
+          // give it an id to identify the object
+          id: wristbands.length + 1,
+          // give the value a text prop and trim the whitespace
+          text: wristband.trim()
+        }
+      ]);
+    }
+
+    // and last but not least, set wristband to empty string to give us a new empty input field
+    setWristband("");
+  }
+
+  useEffect(() => {
+    // stringify the localStorage data so we get a JSON type data to work with
+    localStorage.setItem("wristbands", JSON.stringify(wristbands));
+  }, [wristbands]);
+
+  // function to remove a wristband item from the wristband array
+  function handleDeleteClick(id) {
+    const removeItem = wristbands.filter((wristband) => {
+      return wristband.id !== id;
+    });
+    setWristbands(removeItem);
+  }
+
+  // create a boolean to indicate whether we're in editing mode or adding mode. We render this as HomePage.js via conditional rendering
+  const [isEditing, setIsEditing] = useState(false);
+  const [currentWristband, setCurrentWristband] = useState({});
+
+  // If in editing mode we need a function to save the input changes
+  function handleEditInputChange(e) {
+    setCurrentWristband({ ...currentWristband, text: e.target.value });
+    console.log(currentWristband);
+  }
+
+  function handleEditFormSubmit(e) {
+    e.preventDefault();
+
+    handleUpdateWristband(currentWristband.id, currentWristband);
+  }
+
+  function handleDeleteClick(id) {
+    const removeItem = wristbands.filter((wristband) => {
+      return wristband.id !== id;
+    });
+    setWristbands(removeItem);
+  }
+
+  // function to edit a wristband item
+  function handleUpdateWristband(id, updatedWristband) {
+    const updatedItem = wristbands.map((wristband) => {
+      return wristband.id === id ? updatedWristband : wristband;
+    });
+    setIsEditing(false);
+    setWristbands(updatedItem);
+  }
+
+  function handleEditClick(wristband) {
+    setIsEditing(true);
+    setCurrentWristband({ ...wristband });
+  }
   return (
     <div className='page'>
       {
         introScreen ?
+
+        // if introScreen is true, then display the intro guide else display the welcome message. Via. localStorage we can look for a first time visitor and render the correct display.
 
         <IntroGuide/>
 
@@ -28,8 +125,32 @@ export default function HomePage() {
         
       }
       <div className='my-wristbands'>
-        <h4>Tilføj dit armbånd</h4>
-        Her skal man kunne tilføje og tilgå sine armbånd
+      {isEditing ? (
+        // if editing is true, then display the edit wristband form
+        <EditWristbandForm 
+          currentWristband={currentWristband}
+          setIsEditing={setIsEditing}
+          onEditInputChange={handleEditInputChange}
+          onEditFormSubmit={handleEditFormSubmit}
+        />
+      ) : (
+        // if editing is false, then display the add wristband form
+        <AddWristbandForm 
+          wristband={wristband}
+          onAddInputChange={handleInputChange}
+          onAddFormSubmit={handleFormSubmit}
+        />
+      )}
+
+      <ul className="wristband-list">
+        {wristbands.map((wristband) => (
+          <WristbandItem
+            wristband={wristband}
+            onEditClick={handleEditClick}
+            onDeleteClick={handleDeleteClick}
+          />
+        ))}
+      </ul>
       </div>
       <div className='news'>
         <h4>Nyheder fra parken</h4>
