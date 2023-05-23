@@ -13,11 +13,13 @@ import OpeningHours from './pages/OpeningHours';
 import AnimalList from './pages/AnimalList';
 import NewsArticle from './pages/NewsArticle';
 import DepositPage from './pages/DepositPage';
+import ScrollToTop from './helpers/ScrollToTop';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter basename={'/zoo-app'}>
+        <ScrollToTop />
         <img className='header-logo' src={Logo} alt="Jyllands Park Zoo Logo" />
         <Routes>
           <Route path='/' element={<HomePage />}></Route>
