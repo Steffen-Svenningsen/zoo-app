@@ -7,6 +7,7 @@
   --black: #252525
   --sand: #E0CE98
   --army-green: #4C4F32
+  --brown: #57452F
 
 // Basic App style rules
 .App
@@ -282,7 +283,7 @@
 
   .animal-list
     display: flex
-    gap: 4rem
+    gap: 1rem
     flex-wrap: wrap
     justify-content: space-between
 
@@ -290,7 +291,23 @@
       border-radius: 8px
 
     h3
-      background: var(--sand)
+      background: var(--brown)
       padding: 1rem
       margin: 0
       border-radius: 8px
+      color: var(--white)
+
+  .back-btn-link
+    display: flex
+    justify-content: center
+    align-items: center
+    width: fit-content
+    height: 30px
+    gap: 8px
+    margin-bottom: 2rem
+    color: var(--black)
+
+  .back-btn-img
+    width: 30px
+    height: 30px
+    transform: rotate(180deg)
