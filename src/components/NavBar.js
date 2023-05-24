@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import MoneyIcon from './icons/MoneyIcon'
-import ProfileIcon from './icons/ProfileIcon'
+import WalletIcon from './icons/WalletIcon'
+import MapIcon from './icons/MapIcon'
 import HomeIcon from './icons/HomeIcon'
 import BookIcon from './icons/BookIcon'
 
@@ -13,13 +13,13 @@ export default function NavBar() {
                 <HomeIcon />
             </NavLink>
             <NavLink to="/billetter">
-                <MoneyIcon />
+                <WalletIcon />
             </NavLink>
             <NavLink to="/booking">
                 <BookIcon />
             </NavLink>
-            <NavLink to="/profil">
-                <ProfileIcon />
+            <NavLink to="/gps-kort">
+                <MapIcon />
             </NavLink>
         </div>
     </div>

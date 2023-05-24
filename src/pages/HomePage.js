@@ -165,6 +165,8 @@ export default function HomePage() {
         <QuickLinkBox imgSrc={Food} imgDesc="Mad og drikke" linkPath="/mad-og-drikke" title="Mad og drikke info" />
         <QuickLinkBox imgSrc={OpeningHours} imgDesc="Åbningstider" linkPath="/aabningstider" title="Åbningstider & priser" />
       </div>
+      <h3 className='faq-title'>Typisk stillede spørgsmål</h3>
+      Her skal faq component være
     </div>
   )
 }
