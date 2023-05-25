@@ -144,15 +144,15 @@
     .green-btn
       background: #00FF00d8
 
-    .grey-btn
-      background: var(--grey)
+    .sand-btn
+      background: var(--sand)
 
   .news
     background: var(--sand)
     color: var(--black)
     padding: 1rem
     border-radius: 8px
-    margin: 2rem 0
+    margin: 3rem 0
 
   .quick-links
     display: flex
@@ -313,4 +313,37 @@
     transform: rotate(180deg)
 
   .faq-title
-    margin-top: 2rem
+    margin-top: 3rem
+
+  .accordion
+    background: var(--brown)
+    padding: 1rem
+    color: var(--white)
+    border-radius: 8px
+
+    .accordion-item
+      padding: 1rem
+      border-top: 1px solid var(--grey)
+
+      &:first-of-type
+        border: none
+
+      .accordion-title
+        display: flex
+        gap: 2rem
+        align-items: center
+        justify-content: space-between
+
+        .accordion-sign
+          font-size: 32px
+          font-weight: 700
+
+      .accordion-content
+        line-height: 1.4
+
+  .small-text
+    font-size: 12px
+    opacity: 0.60
+    font-style: italic
+    display: block
+    margin-bottom: 2rem

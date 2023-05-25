@@ -10,6 +10,7 @@ import WristbandItem from "../components/WristbandItem";
 import AddWristbandForm from "../components/AddWristbandForm";
 import EditWristbandForm from "../components/EditWristbandForm";
 import Giraf from "../assets/images/giraf.webp";
+import FaqAccordion from '../components/FaqAccordion';
 
 export default function HomePage() {
   const [introScreen, setIntroScreen] = useState(true)
@@ -105,6 +106,37 @@ export default function HomePage() {
     setIsEditing(true);
     setCurrentWristband({ ...wristband });
   }
+
+  const accordionData = [
+    {
+        title: 'Er min betaling sikker?',
+        content: 'Ja, din betaling er altid sikker via vores app. Når du har indtastet din armbåndskode og du indbetaler, vil pengene sikkert blive sendt til dine tilkoblede armbånd.'
+    },
+    {
+        title: 'Hvad hvis jeg har flere armbånd?',
+        content: 'Har du købt armbånd til flere gør det ingen forskel. Betalingen kommer i en pulje som tilhører alle dine armbånd. Det vil sige at du kun skal overføre et større beløb som alle armbåndene kan trække fra i stedet for et mindre beløb flere steder.'
+    },
+    {
+        title: 'Fungerer armbåndet både til Zoo & Tivoli?',
+        content: 'Nej. Dit armbånd kan bruges via standeren ved den enkelte aktivitet i Tivoli. Ved Zoo skal der betales entrépris, såfremt man ikke besidder et sæsonkort.'
+    },
+    {
+        title: 'Mit armbånd er blevet stjålet, hvad gør jeg?',
+        content: 'Er dit armbånd blevet stjålet eller på anden vis forsvundet bedes du kontakte Jyllands Park Zoo får at spærre armbåndet hurtigst muligt. Vi kan kontaktes i Information ved indgangen til parken eller via telefon på: 97 16 61 20.'
+    },
+    {
+        title: 'Er det kun mig der kan tracke mine armbånd?',
+        content: 'Ja. Når du sikkert har sat dine armbånd op kan du tracke dem via kortet i appen. Vi har implementeret en small og effektiv GPS i vores armbånd for at sikre at vi aldrig mister dem.'
+    },
+    {
+        title: 'Vi skal hjem, men der er stadig penge på armbåndet?',
+        content: 'Ønsker du at få det resterende beløb tilbage, kan du komme fordi Information og få dem udbetalt. Det er også muligt at købe armbåndet med hjem og genbruge det næste gang i kommer.'
+    },
+      {
+        title: 'Skal man aflevere armbåndet tilbage?',
+        content: 'Nej. Ved afrejse kan man tilkøbe sig armbåndet så man kan få det med hjem. Ønsker man at aflevere det tilbage sker det i Information, hvor vi nulstiller armbåndet så det kan genbruges til nye besøgende.'
+    },
+  ]
   return (
     <div className='page'>
       {
@@ -166,7 +198,11 @@ export default function HomePage() {
         <QuickLinkBox imgSrc={OpeningHours} imgDesc="Åbningstider" linkPath="/aabningstider" title="Åbningstider & priser" />
       </div>
       <h3 className='faq-title'>Typisk stillede spørgsmål</h3>
-      Her skal faq component være
+      <div className="accordion">
+        {accordionData.map(({ title, content }) => (
+          <FaqAccordion title={title} content={content} />
+        ))}
+      </div>
     </div>
   )
 }
