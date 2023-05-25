@@ -351,3 +351,82 @@
   .food-page
     img
       border-radius: 8px
+
+  .payment-form
+    background: var(--grey)
+    padding: 1rem
+    border-radius: 8px
+
+    .form-label-text
+      font-size: 12px
+      opacity: 0.70
+
+    .card-options
+      display: flex
+      gap: 1rem
+      align-items: center
+      margin-bottom: 2rem
+
+      label
+        position: relative
+
+        img
+          width: 48px
+          height: 48px
+          padding: 0 0.5rem
+          border-radius: 4px
+
+        [type=radio]
+          position: absolute
+          width: 0
+          height: 0
+          opacity: 0
+
+        [type=radio]:checked + img
+          outline: 2px solid var(--black)
+
+    .form-row
+      display: flex
+      justify-content: space-between
+      gap: 1rem
+      margin-bottom: 1rem
+      flex-wrap: wrap
+
+      div
+        display: flex
+        flex-direction: column
+        gap: 0.5rem
+
+        label
+          font-size: 12px
+          opacity: 0.70
+
+        input
+          padding: 0.5rem
+          max-width: 120px
+
+          &::placeholder
+            font-style: italic
+
+    .deposit-amount
+      display: flex
+      flex-direction: column
+      gap: 0.5rem
+
+      label
+        font-size: 12px
+        opacity: 0.70
+
+      input
+        padding: 0.5rem
+
+    button
+      width: 100%
+      padding: 1.5rem
+      background: var(--brown)
+      color: white
+      font-size: 22px
+      font-weight: 700
+      margin-top: 1rem
+      border: none
+      border-radius: 8px
