@@ -4,6 +4,7 @@ import Mastercard from "../assets/images/mastercard.png"
 import Visa from "../assets/images/visa.png"
 
 export default function PaymentForm() {
+    const paymentCard = document.querySelector("input[name='card']");
   return (
     <form className='payment-form'>
         <p className='form-label-text'>Vælg korttype</p>
@@ -28,17 +29,17 @@ export default function PaymentForm() {
             </div>
             <div className='form-date'>
                 <label htmlFor="date">Udløbsdato</label>
-                <input type="date" id='date'/>
+                <input type="text" placeholder='03/26' id='date'/>
             </div>
         </div>
         <div className='form-row'>
             <div className="form-card-number">
                 <label htmlFor="card-number">Kortnummer</label>
-                <input id='card-number' pattern='\d*' type="text" placeholder='1234 1234 1234 1234' />
+                <input maxLength={16} minLength={16} id='card-number' pattern='\d*' type="text" placeholder='1234 1234 1234 1234' />
             </div>
             <div className='form-cvc'>
                 <label htmlFor="cvc">CVC</label>
-                <input type="text" pattern='\d*' placeholder='123' id='cvc'/>
+                <input maxLength={3} minLength={3} type="text" pattern='\d*' placeholder='123' id='cvc'/>
             </div>
         </div>
         <div className='deposit-amount'>
