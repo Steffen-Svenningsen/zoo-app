@@ -57,6 +57,7 @@
     background: var(--cta)
     border-radius: 8px
     font-weight: 700
+    border: none
 
   .nav-bar
     background: var(--cta)
@@ -140,12 +141,15 @@
 
     .red-btn
       background: #FF6347
+      color: var(--black)
 
     .green-btn
       background: #00FF00d8
+      color: var(--black)
 
     .sand-btn
       background: var(--sand)
+      color: var(--black)
 
   .news
     background: var(--sand)
@@ -197,7 +201,7 @@
   .mySwiper
     width: 100%
     height: 100vh
-    position: absolute
+    position: fixed
     top: 0
     left: 0
     background: var(--white)
@@ -209,7 +213,16 @@
       right: 1rem
       z-index: 200
       cursor: pointer
-      padding: 0.5rem 1rem
+      border-radius: 100px
+      width: 32px
+      height: 32px
+      display: grid
+      place-items: center
+      font-weight: 700
+      border: none
+      background: var(--grey)
+      opacity: 0.80
+      color: var(--black)
 
     .swiper-slide
       display: flex
