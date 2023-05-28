@@ -25,26 +25,30 @@ export default function PaymentForm() {
         <div className='form-row'>
             <div className="form-name">
                 <label htmlFor="name">Kortholders navn</label>
-                <input id='name' type="text" placeholder='Henrik Jensen' />
+                <input required id='name' type="text" placeholder='Henrik Jensen' />
             </div>
             <div className='form-date'>
                 <label htmlFor="date">Udløbsdato</label>
-                <input type="text" placeholder='03/26' id='date'/>
+                <div>
+                    <input pattern='\d*' required type="text" maxLength={2} minLength={2} placeholder='03' id='date'/>
+                    <p>/</p>
+                    <input pattern='\d*' required type="text" maxLength={2} minLength={2} placeholder='26' id='month'/>
+                </div>
             </div>
         </div>
         <div className='form-row'>
             <div className="form-card-number">
                 <label htmlFor="card-number">Kortnummer</label>
-                <input maxLength={16} minLength={16} id='card-number' pattern='\d*' type="text" placeholder='1234 1234 1234 1234' />
+                <input required maxLength={16} minLength={16} id='card-number' pattern='\d*' type="text" placeholder='1234 1234 1234 1234' />
             </div>
             <div className='form-cvc'>
                 <label htmlFor="cvc">CVC</label>
-                <input maxLength={3} minLength={3} type="text" pattern='\d*' placeholder='123' id='cvc'/>
+                <input required maxLength={3} minLength={3} type="text" pattern='\d*' placeholder='123' id='cvc'/>
             </div>
         </div>
         <div className='deposit-amount'>
             <label htmlFor="deposit-amount">Beløb</label>
-            <input type="text" pattern='\d*' id='deposit-amount' placeholder='.kr'/>
+            <input required type="text" pattern='\d*' id='deposit-amount' placeholder='.kr'/>
         </div>
         <button type='submit'>Betal</button>
     </form>
