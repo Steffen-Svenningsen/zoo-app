@@ -132,9 +132,13 @@ export default function HomePage() {
         title: 'Vi skal hjem, men der er stadig penge på armbåndet?',
         content: 'Ønsker du at få det resterende beløb tilbage, kan du komme fordi Information og få dem udbetalt. Det er også muligt at købe armbåndet med hjem og genbruge det næste gang i kommer.'
     },
-      {
+    {
         title: 'Skal man aflevere armbåndet tilbage?',
         content: 'Nej. Ved afrejse kan man tilkøbe sig armbåndet så man kan få det med hjem. Ønsker man at aflevere det tilbage sker det i Information, hvor vi nulstiller armbåndet så det kan genbruges til nye besøgende.'
+    },
+    {
+        title: 'Hvad skal man medbringe til grillpladsen?',
+        content: 'Har I booket grillplads er I som udgangspunkt sikret en grill (deles dog med andre) og en spiseplads til 8-12 personer. Her medfølger kul og gas til vores grill og foliebakker til mad. Dvs. i skal selv medbringe mad som det eneste.'
     },
   ]
   return (
