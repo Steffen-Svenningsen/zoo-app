@@ -1,5 +1,4 @@
-import React, { useRef, useState } from "react";
-import { NavLink } from 'react-router-dom'
+import React, { useState } from "react";
 import AppImage from "../assets/illustrations/app.png";
 import WalletImage from "../assets/illustrations/wallet.png";
 import ZooImage from "../assets/illustrations/zoo.png";
