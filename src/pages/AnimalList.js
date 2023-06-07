@@ -39,7 +39,7 @@ export default function AnimalList() {
     <div className='page'>
       <BackBtn linkPath="/"/>
       <div className="animal-list">
-        <AnimalBox imgSrc={Monkey} animal="Aber" />
+        <AnimalBox imgSrc={Monkey} animal="Aber" imgDesc="Aber" />
         <AnimalBox imgSrc={Armadillo} animal="Bæltedyr" />
         <AnimalBox imgSrc={Goat} animal="Dværgged" />
         <AnimalBox imgSrc={Alligator} animal="Dværgkaiman" />
